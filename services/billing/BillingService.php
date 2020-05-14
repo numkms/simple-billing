@@ -7,12 +7,22 @@ use app\services\billing\repository\BillingRepositoryInterface;
 use yii\base\Component;
 use yii\base\Exception;
 
+/**
+ * Class BillingService
+ * @package app\services\billing
+ * @property $repository BillingRepositoryInterface
+ */
 class BillingService extends Component {
 
     public $minimumBalancePoint = -1000;
 
     private $repository;
 
+    /**
+     * BillingService constructor.
+     * @param BillingRepositoryInterface $repository
+     * @param array $config
+     */
     public function __construct(BillingRepositoryInterface $repository, $config = []) {
         $this->repository = $repository;
     }

@@ -39,7 +39,7 @@ class BillingSqlRepository implements BillingRepositoryInterface {
     {
         $this->checkOperationExist();
 
-        $this->transactions[] = new \app\models\Transaction([
+        $this->transactions[] = new Transaction([
             'sum' => $amount,
             'type' => 1,
         ]);
@@ -53,7 +53,7 @@ class BillingSqlRepository implements BillingRepositoryInterface {
     {
         $this->checkOperationExist();
 
-        $this->transactions[] = new \app\models\Transaction([
+        $this->transactions[] = new Transaction([
             'sum' => $amount,
             'type' => 0,
         ]);
@@ -98,7 +98,7 @@ class BillingSqlRepository implements BillingRepositoryInterface {
 
     private function checkOperationExist() {
         if (!$this->operation) {
-            throw new Exception("Please call beginPperation before use endOperation()");
+            throw new Exception("Please call beginOperation before use anotherBillingRepositoryInterfaceFunction()");
         }
     }
 
